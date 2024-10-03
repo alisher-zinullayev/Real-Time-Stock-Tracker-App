@@ -8,6 +8,8 @@
 import UIKit
 
 final class StocksListViewController: UIViewController {
+    var viewModel: StocksViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Stocks"
