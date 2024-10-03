@@ -19,6 +19,10 @@
 		436026F72CAF34F4002F052A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026F62CAF34F4002F052A /* AppCoordinator.swift */; };
 		436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026F82CAF3595002F052A /* MainCoordinator.swift */; };
 		436026FD2CAF36F7002F052A /* StocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026FC2CAF36F7002F052A /* StocksViewModel.swift */; };
+		436026FF2CAF3ACC002F052A /* StocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */; };
+		436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */; };
+		436027042CAF41A6002F052A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027032CAF41A6002F052A /* Helper.swift */; };
+		436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027052CAF4211002F052A /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		436026F62CAF34F4002F052A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		436026F82CAF3595002F052A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		436026FC2CAF36F7002F052A /* StocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewModel.swift; sourceTree = "<group>"; };
+		436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
+		436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StocksListViewController + UITableView.swift"; sourceTree = "<group>"; };
+		436027032CAF41A6002F052A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		436027052CAF4211002F052A /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
 			isa = PBXGroup;
 			children = (
+				436027022CAF4198002F052A /* Helpers */,
 				436026FB2CAF36EB002F052A /* ViewModels */,
 				436026FA2CAF3634002F052A /* Views */,
 				436026F32CAF347F002F052A /* Coordinators */,
@@ -148,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */,
+				436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */,
+				436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +169,15 @@
 				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		436027022CAF4198002F052A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				436027032CAF41A6002F052A /* Helper.swift */,
+				436027052CAF4211002F052A /* UIColor + Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +312,14 @@
 			files = (
 				436026F52CAF34CE002F052A /* Coordinator.swift in Sources */,
 				436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */,
+				436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */,
 				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
+				436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */,
 				436026F72CAF34F4002F052A /* AppCoordinator.swift in Sources */,
 				431E1DA72CAF2D9200456EDF /* AppDelegate.swift in Sources */,
 				436026FD2CAF36F7002F052A /* StocksViewModel.swift in Sources */,
+				436027042CAF41A6002F052A /* Helper.swift in Sources */,
+				436026FF2CAF3ACC002F052A /* StocksTableViewCell.swift in Sources */,
 				431E1DA92CAF2D9200456EDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
