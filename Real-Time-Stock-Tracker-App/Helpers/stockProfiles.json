@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Adobe Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=ADBE",
+    "ticker": "ADBE"
+  },
+  {
+    "name": "Amazon.com Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=AMZN",
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Apple Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=AAPL",
+    "ticker": "AAPL"
+  },
+  {
+    "name": "Booking Holdings Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=BKNG",
+    "ticker": "BKNG"
+  },
+  {
+    "name": "Colgate-Palmolive Co",
+    "logo": "https://finnhub.io/api/logo?symbol=CL",
+    "ticker": "CL"
+  },
+  {
+    "name": "Chevron Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=CVX",
+    "ticker": "CVX"
+  },
+  {
+    "name": "Electronic Arts Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=EA",
+    "ticker": "EA"
+  },
+  {
+    "name": "eBay Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=EBAY",
+    "ticker": "EBAY"
+  },
+  {
+    "name": "Microsoft Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=MSFT",
+    "ticker": "MSFT"
+  },
+  {
+    "name": "Motorola Solutions Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=MSI",
+    "ticker": "MSI"
+  },
+  {
+    "name": "Netflix Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=NFLX",
+    "ticker": "NFLX"
+  },
+  {
+    "name": "Nike Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=NKE",
+    "ticker": "NKE"
+  },
+  {
+    "name": "NVIDIA Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=NVDA",
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Oracle Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=ORCL",
+    "ticker": "ORCL"
+  },
+  {
+    "name": "Philip Morris International Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=PM",
+    "ticker": "PM"
+  },
+  {
+    "name": "Ralph Lauren Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=RL",
+    "ticker": "RL"
+  },
+  {
+    "name": "Starbucks Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=SBUX",
+    "ticker": "SBUX"
+  },
+  {
+    "name": "Schlumberger NV",
+    "logo": "https://finnhub.io/api/logo?symbol=SLB",
+    "ticker": "SLB"
+  },
+  {
+    "name": "Walt Disney Co",
+    "logo": "https://finnhub.io/api/logo?symbol=DIS",
+    "ticker": "DIS"
+  },
+  {
+    "name": "Under Armour Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=UAA",
+    "ticker": "UAA"
+  },
+  {
+    "name": "Visa Inc",
+    "logo": "https://finnhub.io/api/logo?symbol=V",
+    "ticker": "V"
+  },
+  {
+    "name": "Zebra Technologies Corp",
+    "logo": "https://finnhub.io/api/logo?symbol=ZBRA",
+    "ticker": "ZBRA"
+  }
+]
+
