@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		431E1DA72CAF2D9200456EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DA62CAF2D9200456EDF /* AppDelegate.swift */; };
+		431E1DA92CAF2D9200456EDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DA82CAF2D9200456EDF /* SceneDelegate.swift */; };
+		431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */; };
+		431E1DB02CAF2D9400456EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431E1DAF2CAF2D9400456EDF /* Assets.xcassets */; };
+		431E1DB32CAF2D9400456EDF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 431E1DB22CAF2D9400456EDF /* Base */; };
+		431E1DBE2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DBD2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift */; };
+		431E1DC82CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DC72CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift */; };
+		431E1DCA2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DC92CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		431E1DBA2CAF2D9500456EDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 431E1D9B2CAF2D9200456EDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431E1DA22CAF2D9200456EDF;
+			remoteInfo = "Real-Time-Stock-Tracker-App";
+		};
+		431E1DC42CAF2D9500456EDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 431E1D9B2CAF2D9200456EDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431E1DA22CAF2D9200456EDF;
+			remoteInfo = "Real-Time-Stock-Tracker-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		431E1DA32CAF2D9200456EDF /* Real-Time-Stock-Tracker-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Real-Time-Stock-Tracker-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		431E1DA62CAF2D9200456EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		431E1DA82CAF2D9200456EDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksListViewController.swift; sourceTree = "<group>"; };
+		431E1DAF2CAF2D9400456EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		431E1DB22CAF2D9400456EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		431E1DB42CAF2D9400456EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431E1DB92CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Real-Time-Stock-Tracker-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		431E1DBD2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Time_Stock_Tracker_AppTests.swift; sourceTree = "<group>"; };
+		431E1DC32CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Real-Time-Stock-Tracker-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		431E1DC72CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Time_Stock_Tracker_AppUITests.swift; sourceTree = "<group>"; };
+		431E1DC92CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		431E1DA02CAF2D9200456EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DB62CAF2D9500456EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DC02CAF2D9500456EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		431E1D9A2CAF2D9200456EDF = {
+			isa = PBXGroup;
+			children = (
+				431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */,
+				431E1DBC2CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests */,
+				431E1DC62CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests */,
+				431E1DA42CAF2D9200456EDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		431E1DA42CAF2D9200456EDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431E1DA32CAF2D9200456EDF /* Real-Time-Stock-Tracker-App.app */,
+				431E1DB92CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests.xctest */,
+				431E1DC32CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
+			isa = PBXGroup;
+			children = (
+				431E1DA62CAF2D9200456EDF /* AppDelegate.swift */,
+				431E1DA82CAF2D9200456EDF /* SceneDelegate.swift */,
+				431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */,
+				431E1DAF2CAF2D9400456EDF /* Assets.xcassets */,
+				431E1DB12CAF2D9400456EDF /* LaunchScreen.storyboard */,
+				431E1DB42CAF2D9400456EDF /* Info.plist */,
+			);
+			path = "Real-Time-Stock-Tracker-App";
+			sourceTree = "<group>";
+		};
+		431E1DBC2CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				431E1DBD2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift */,
+			);
+			path = "Real-Time-Stock-Tracker-AppTests";
+			sourceTree = "<group>";
+		};
+		431E1DC62CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				431E1DC72CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift */,
+				431E1DC92CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift */,
+			);
+			path = "Real-Time-Stock-Tracker-AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431E1DA22CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431E1DCD2CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-App" */;
+			buildPhases = (
+				431E1D9F2CAF2D9200456EDF /* Sources */,
+				431E1DA02CAF2D9200456EDF /* Frameworks */,
+				431E1DA12CAF2D9200456EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Real-Time-Stock-Tracker-App";
+			productName = "Real-Time-Stock-Tracker-App";
+			productReference = 431E1DA32CAF2D9200456EDF /* Real-Time-Stock-Tracker-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		431E1DB82CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431E1DD02CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-AppTests" */;
+			buildPhases = (
+				431E1DB52CAF2D9500456EDF /* Sources */,
+				431E1DB62CAF2D9500456EDF /* Frameworks */,
+				431E1DB72CAF2D9500456EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				431E1DBB2CAF2D9500456EDF /* PBXTargetDependency */,
+			);
+			name = "Real-Time-Stock-Tracker-AppTests";
+			productName = "Real-Time-Stock-Tracker-AppTests";
+			productReference = 431E1DB92CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		431E1DC22CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431E1DD32CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-AppUITests" */;
+			buildPhases = (
+				431E1DBF2CAF2D9500456EDF /* Sources */,
+				431E1DC02CAF2D9500456EDF /* Frameworks */,
+				431E1DC12CAF2D9500456EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				431E1DC52CAF2D9500456EDF /* PBXTargetDependency */,
+			);
+			name = "Real-Time-Stock-Tracker-AppUITests";
+			productName = "Real-Time-Stock-Tracker-AppUITests";
+			productReference = 431E1DC32CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		431E1D9B2CAF2D9200456EDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					431E1DA22CAF2D9200456EDF = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					431E1DB82CAF2D9500456EDF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 431E1DA22CAF2D9200456EDF;
+					};
+					431E1DC22CAF2D9500456EDF = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 431E1DA22CAF2D9200456EDF;
+					};
+				};
+			};
+			buildConfigurationList = 431E1D9E2CAF2D9200456EDF /* Build configuration list for PBXProject "Real-Time-Stock-Tracker-App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431E1D9A2CAF2D9200456EDF;
+			productRefGroup = 431E1DA42CAF2D9200456EDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				431E1DA22CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */,
+				431E1DB82CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests */,
+				431E1DC22CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431E1DA12CAF2D9200456EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431E1DB02CAF2D9400456EDF /* Assets.xcassets in Resources */,
+				431E1DB32CAF2D9400456EDF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DB72CAF2D9500456EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DC12CAF2D9500456EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		431E1D9F2CAF2D9200456EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
+				431E1DA72CAF2D9200456EDF /* AppDelegate.swift in Sources */,
+				431E1DA92CAF2D9200456EDF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DB52CAF2D9500456EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431E1DBE2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431E1DBF2CAF2D9500456EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431E1DC82CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift in Sources */,
+				431E1DCA2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		431E1DBB2CAF2D9500456EDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431E1DA22CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */;
+			targetProxy = 431E1DBA2CAF2D9500456EDF /* PBXContainerItemProxy */;
+		};
+		431E1DC52CAF2D9500456EDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431E1DA22CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */;
+			targetProxy = 431E1DC42CAF2D9500456EDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		431E1DB12CAF2D9400456EDF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431E1DB22CAF2D9400456EDF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		431E1DCB2CAF2D9500456EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		431E1DCC2CAF2D9500456EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		431E1DCE2CAF2D9500456EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Real-Time-Stock-Tracker-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		431E1DCF2CAF2D9500456EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Real-Time-Stock-Tracker-App/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		431E1DD12CAF2D9500456EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Real-Time-Stock-Tracker-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Real-Time-Stock-Tracker-App";
+			};
+			name = Debug;
+		};
+		431E1DD22CAF2D9500456EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Real-Time-Stock-Tracker-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Real-Time-Stock-Tracker-App";
+			};
+			name = Release;
+		};
+		431E1DD42CAF2D9500456EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Real-Time-Stock-Tracker-App";
+			};
+			name = Debug;
+		};
+		431E1DD52CAF2D9500456EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2479552N23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "alisher-zinullayev.Real-Time-Stock-Tracker-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Real-Time-Stock-Tracker-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		431E1D9E2CAF2D9200456EDF /* Build configuration list for PBXProject "Real-Time-Stock-Tracker-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431E1DCB2CAF2D9500456EDF /* Debug */,
+				431E1DCC2CAF2D9500456EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431E1DCD2CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431E1DCE2CAF2D9500456EDF /* Debug */,
+				431E1DCF2CAF2D9500456EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431E1DD02CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431E1DD12CAF2D9500456EDF /* Debug */,
+				431E1DD22CAF2D9500456EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431E1DD32CAF2D9500456EDF /* Build configuration list for PBXNativeTarget "Real-Time-Stock-Tracker-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431E1DD42CAF2D9500456EDF /* Debug */,
+				431E1DD52CAF2D9500456EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 431E1D9B2CAF2D9200456EDF /* Project object */;
+}
