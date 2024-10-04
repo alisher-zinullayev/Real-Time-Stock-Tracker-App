@@ -25,6 +25,20 @@
 		436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027052CAF4211002F052A /* UIColor + Extension.swift */; };
 		436027082CAF44BA002F052A /* stockProfiles.json in Resources */ = {isa = PBXBuildFile; fileRef = 436027072CAF44BA002F052A /* stockProfiles.json */; };
 		4360270B2CAF457A002F052A /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360270A2CAF457A002F052A /* StockData.swift */; };
+		4360270F2CB01D53002F052A /* StockLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360270E2CB01D53002F052A /* StockLocalDataSource.swift */; };
+		436027112CB01EBA002F052A /* StockLocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027102CB01EBA002F052A /* StockLocalDataSourceProtocol.swift */; };
+		436027132CB01F77002F052A /* StockPriceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027122CB01F77002F052A /* StockPriceLoader.swift */; };
+		436027152CB01F7F002F052A /* StockPriceLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027142CB01F7F002F052A /* StockPriceLoaderProtocol.swift */; };
+		436027172CB01FDA002F052A /* StockPriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027162CB01FDA002F052A /* StockPriceData.swift */; };
+		436027192CB0205B002F052A /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027182CB0205B002F052A /* APIConstants.swift */; };
+		4360271B2CB0208C002F052A /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360271A2CB0208C002F052A /* NetworkingError.swift */; };
+		4360271D2CB020FD002F052A /* StockImageLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360271C2CB020FD002F052A /* StockImageLoaderProtocol.swift */; };
+		4360271F2CB02115002F052A /* StockImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360271E2CB02115002F052A /* StockImageLoader.swift */; };
+		436027222CB02141002F052A /* ImageLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027212CB02141002F052A /* ImageLoadError.swift */; };
+		436027242CB02269002F052A /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027232CB02269002F052A /* StockService.swift */; };
+		436027262CB02271002F052A /* StockServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027252CB02271002F052A /* StockServiceProtocol.swift */; };
+		436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027272CB022BB002F052A /* StockImageServiceProtocol.swift */; };
+		4360272A2CB022E2002F052A /* StockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027292CB022E2002F052A /* StockImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +81,20 @@
 		436027052CAF4211002F052A /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		436027072CAF44BA002F052A /* stockProfiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stockProfiles.json; sourceTree = "<group>"; };
 		4360270A2CAF457A002F052A /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
+		4360270E2CB01D53002F052A /* StockLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockLocalDataSource.swift; sourceTree = "<group>"; };
+		436027102CB01EBA002F052A /* StockLocalDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockLocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		436027122CB01F77002F052A /* StockPriceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceLoader.swift; sourceTree = "<group>"; };
+		436027142CB01F7F002F052A /* StockPriceLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceLoaderProtocol.swift; sourceTree = "<group>"; };
+		436027162CB01FDA002F052A /* StockPriceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceData.swift; sourceTree = "<group>"; };
+		436027182CB0205B002F052A /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		4360271A2CB0208C002F052A /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		4360271C2CB020FD002F052A /* StockImageLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageLoaderProtocol.swift; sourceTree = "<group>"; };
+		4360271E2CB02115002F052A /* StockImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageLoader.swift; sourceTree = "<group>"; };
+		436027212CB02141002F052A /* ImageLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadError.swift; sourceTree = "<group>"; };
+		436027232CB02269002F052A /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
+		436027252CB02271002F052A /* StockServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockServiceProtocol.swift; sourceTree = "<group>"; };
+		436027272CB022BB002F052A /* StockImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageServiceProtocol.swift; sourceTree = "<group>"; };
+		436027292CB022E2002F052A /* StockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +145,9 @@
 		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
 			isa = PBXGroup;
 			children = (
+				436027202CB02136002F052A /* Errors */,
+				4360270D2CB01D09002F052A /* Protocols */,
+				4360270C2CB01ABE002F052A /* Services */,
 				436027092CAF4504002F052A /* Models */,
 				436027022CAF4198002F052A /* Helpers */,
 				436026FB2CAF36EB002F052A /* ViewModels */,
@@ -182,6 +213,7 @@
 				436027072CAF44BA002F052A /* stockProfiles.json */,
 				436027032CAF41A6002F052A /* Helper.swift */,
 				436027052CAF4211002F052A /* UIColor + Extension.swift */,
+				436027182CB0205B002F052A /* APIConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,8 +222,42 @@
 			isa = PBXGroup;
 			children = (
 				4360270A2CAF457A002F052A /* StockData.swift */,
+				436027162CB01FDA002F052A /* StockPriceData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4360270C2CB01ABE002F052A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4360270E2CB01D53002F052A /* StockLocalDataSource.swift */,
+				436027122CB01F77002F052A /* StockPriceLoader.swift */,
+				4360271E2CB02115002F052A /* StockImageLoader.swift */,
+				436027232CB02269002F052A /* StockService.swift */,
+				436027292CB022E2002F052A /* StockImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4360270D2CB01D09002F052A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				436027102CB01EBA002F052A /* StockLocalDataSourceProtocol.swift */,
+				436027142CB01F7F002F052A /* StockPriceLoaderProtocol.swift */,
+				4360271C2CB020FD002F052A /* StockImageLoaderProtocol.swift */,
+				436027252CB02271002F052A /* StockServiceProtocol.swift */,
+				436027272CB022BB002F052A /* StockImageServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		436027202CB02136002F052A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				4360271A2CB0208C002F052A /* NetworkingError.swift */,
+				436027212CB02141002F052A /* ImageLoadError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,15 +392,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				436026F52CAF34CE002F052A /* Coordinator.swift in Sources */,
+				4360271F2CB02115002F052A /* StockImageLoader.swift in Sources */,
+				436027132CB01F77002F052A /* StockPriceLoader.swift in Sources */,
 				436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */,
 				436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */,
+				4360270F2CB01D53002F052A /* StockLocalDataSource.swift in Sources */,
+				436027172CB01FDA002F052A /* StockPriceData.swift in Sources */,
 				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
+				436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */,
+				436027112CB01EBA002F052A /* StockLocalDataSourceProtocol.swift in Sources */,
+				4360271B2CB0208C002F052A /* NetworkingError.swift in Sources */,
 				436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */,
+				4360272A2CB022E2002F052A /* StockImageService.swift in Sources */,
 				436026F72CAF34F4002F052A /* AppCoordinator.swift in Sources */,
+				436027262CB02271002F052A /* StockServiceProtocol.swift in Sources */,
+				436027152CB01F7F002F052A /* StockPriceLoaderProtocol.swift in Sources */,
 				431E1DA72CAF2D9200456EDF /* AppDelegate.swift in Sources */,
 				436026FD2CAF36F7002F052A /* StocksViewModel.swift in Sources */,
+				436027242CB02269002F052A /* StockService.swift in Sources */,
 				4360270B2CAF457A002F052A /* StockData.swift in Sources */,
+				436027222CB02141002F052A /* ImageLoadError.swift in Sources */,
+				436027192CB0205B002F052A /* APIConstants.swift in Sources */,
 				436027042CAF41A6002F052A /* Helper.swift in Sources */,
+				4360271D2CB020FD002F052A /* StockImageLoaderProtocol.swift in Sources */,
 				436026FF2CAF3ACC002F052A /* StocksTableViewCell.swift in Sources */,
 				431E1DA92CAF2D9200456EDF /* SceneDelegate.swift in Sources */,
 			);
