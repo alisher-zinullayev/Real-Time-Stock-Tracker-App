@@ -29,12 +29,42 @@ final class StocksListViewController: UIViewController {
         super.viewDidLoad()
         title = "Stocks"
         view.backgroundColor = .systemBackground
-        stocksTableView.delegate = self
-        stocksTableView.dataSource = self
+        setViewModel()
+        setBindings()
         setup()
+        viewModel.fetchStocks()
     }
     
+    private func setViewModel() {
+        let stockLocalDataSource = StockLocalDataSource()
+        let stocksPricesLoader = StockPriceLoader()
+        let stockImageLoader = StockImageLoader()
+        
+        let stockService = StockService(stockLocalDataSource: stockLocalDataSource, stockPricesLoader: stocksPricesLoader)
+        let stockImageService = StockImageService(stockImageLoader: stockImageLoader)
+        
+        viewModel = StocksViewModel(stockService: stockService, stockImageService: stockImageService)
+    }
+    
+    private func setBindings() {
+        viewModel.reloadTableView = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.stocksTableView.reloadData()
+            }
+        }
+        
+        viewModel.showErrorAlert = { [weak self] errorMessage in
+            self?.showError(with: errorMessage)
+        }
+    }
+}
+
+extension StocksListViewController {
     private func setup() {
+        stocksTableView.delegate = self
+        stocksTableView.dataSource = self
+        
         view.addSubview(stocksTableView)
         
         NSLayoutConstraint.activate([
@@ -43,5 +73,11 @@ final class StocksListViewController: UIViewController {
             stocksTableView.topAnchor.constraint(equalTo: view.topAnchor),
             stocksTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func showError(with message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }

@@ -104,10 +104,54 @@ final class StocksTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func configure(index: Int) {
-        if isEven(index) {
-            containerView.layer.backgroundColor = UIColor.myGrayColor.cgColor
+    func configure(
+        with stock: StockData,
+        price: StockPriceData?,
+        imageService: StockImageServiceProtocol,
+        index: Int
+    ) {
+        name.text = stock.name
+        abbreviation.text = stock.ticker
+        
+        imageService.fetchImage(urlString: stock.logo) { [weak self] result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.logo.image = image
+                }
+            case .failure(let error):
+                print("failed to load image for \(stock.ticker): \(error.localizedDescription)")
+            }
+        }
+        
+        if let price = price {
+            if let newPrice = price.currentPrice {
+                currentPrice.text = String(format: "$%.2f", newPrice)
+            } else {
+                currentPrice.text = "--"
+            }
+            if let change = price.change, let changePercent = price.changePercent {
+                percentPrice.text = String(format: "%+.2f (%.2f%%)", change, changePercent)
+                percentPrice.textColor = change >= 0 ? .systemGreen : .systemRed
+            } else {
+                percentPrice.text = "--"
+            }
         } else {
+            currentPrice.text = "--"
+            percentPrice.text = "--"
+        }
+        
+        switch stock.isFavorite {
+        case true:
+            favoriteImage.image = UIImage(named: "Favorite")
+        case false:
+            favoriteImage.image = UIImage(named: "NotFavorite")
+        }
+        
+        switch isEven(index) {
+        case true:
+            containerView.layer.backgroundColor = UIColor.myGrayColor.cgColor
+        case false:
             containerView.layer.backgroundColor = UIColor.myWhiteColor.cgColor
         }
     }

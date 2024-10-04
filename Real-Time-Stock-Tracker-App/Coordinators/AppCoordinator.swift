@@ -20,7 +20,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showMainFlow() {
-        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        let mainCoordinator = MainCoordinator.create(navigationController: navigationController)
         mainCoordinator.parentCoordinator = self
         childCoordinators.append(mainCoordinator)
         mainCoordinator.start()
