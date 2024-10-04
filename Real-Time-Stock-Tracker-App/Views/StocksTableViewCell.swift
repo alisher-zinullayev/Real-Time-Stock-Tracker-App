@@ -10,6 +10,8 @@ import UIKit
 final class StocksTableViewCell: UITableViewCell {
     static let identifier = String(describing: StocksTableViewCell.self)
     
+    var favoriteButtonTapped: (() -> Void)?
+    
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.lightGray
@@ -65,6 +67,7 @@ final class StocksTableViewCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "NotFavorite")
+        imageView.isUserInteractionEnabled = true
         imageView.tintColor = UIColor(cgColor: CGColor(red: 1, green: 0.79, blue: 0.11, alpha: 1))
         return imageView
     }()
@@ -94,6 +97,7 @@ final class StocksTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        setupFavoriteTapGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -102,6 +106,16 @@ final class StocksTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+    }
+    
+    private func setupFavoriteTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(favoriteImageTapped))
+        favoriteImage.isUserInteractionEnabled = true
+        favoriteImage.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func favoriteImageTapped() {
+        favoriteButtonTapped?()
     }
     
     func configure(
@@ -154,19 +168,20 @@ final class StocksTableViewCell: UITableViewCell {
         case false:
             containerView.layer.backgroundColor = UIColor.myWhiteColor.cgColor
         }
+        
+        setFavorite(isFavorite: stock.isFavorite)
+    }
+    
+    func setFavorite(isFavorite: Bool) {
+        let imageName = isFavorite ? "Favorite" : "NotFavorite"
+        favoriteImage.image = UIImage(named: imageName)
+        favoriteImage.tintColor = isFavorite ? .systemRed : UIColor(cgColor: CGColor(red: 1, green: 0.79, blue: 0.11, alpha: 1))
     }
 }
 
 extension StocksTableViewCell {
     private func setupUI() {
-        name.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        name.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        currentPrice.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        currentPrice.setContentCompressionResistancePriority(.required, for: .horizontal)
-        percentPrice.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        percentPrice.setContentCompressionResistancePriority(.required, for: .horizontal)
-        
-        self.addSubview(containerView)
+        contentView.addSubview(containerView)
         containerView.addSubview(containerForegroundView)
         containerView.addSubview(logo)
         containerView.addSubview(name)
@@ -176,40 +191,43 @@ extension StocksTableViewCell {
         containerView.addSubview(favoriteImage)
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.topAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             containerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 68),
             
-            logo.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
-            logo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
-            logo.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
-            logo.widthAnchor.constraint(equalToConstant: 52),
+            containerForegroundView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            containerForegroundView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            containerForegroundView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            containerForegroundView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            containerForegroundView.heightAnchor.constraint(greaterThanOrEqualToConstant: 68),
+            
             logo.heightAnchor.constraint(equalToConstant: 52),
+            logo.widthAnchor.constraint(equalToConstant: 52),
+            logo.leadingAnchor.constraint(equalTo: containerForegroundView.leadingAnchor, constant: 8),
+            logo.topAnchor.constraint(equalTo: containerForegroundView.topAnchor, constant: 8),
+            logo.bottomAnchor.constraint(lessThanOrEqualTo: containerForegroundView.bottomAnchor, constant: -8),
             
             name.leadingAnchor.constraint(equalTo: logo.trailingAnchor, constant: 12),
-            name.trailingAnchor.constraint(lessThanOrEqualTo: currentPrice.leadingAnchor, constant: -8),
-            name.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 14),
-            
-            favoriteImage.leadingAnchor.constraint(equalTo: name.trailingAnchor, constant: 6),
-            favoriteImage.centerYAnchor.constraint(equalTo: name.centerYAnchor),
-            favoriteImage.widthAnchor.constraint(equalToConstant: 16),
-            favoriteImage.heightAnchor.constraint(equalToConstant: 16),
-            favoriteImage.trailingAnchor.constraint(lessThanOrEqualTo: currentPrice.leadingAnchor, constant: -8),
-            
-            currentPrice.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -17),
-            currentPrice.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 14),
-            currentPrice.leadingAnchor.constraint(greaterThanOrEqualTo: favoriteImage.trailingAnchor, constant: 8),
+            name.topAnchor.constraint(equalTo: containerForegroundView.topAnchor, constant: 14),
+            name.bottomAnchor.constraint(equalTo: containerForegroundView.bottomAnchor, constant: -30),
             
             abbreviation.leadingAnchor.constraint(equalTo: logo.trailingAnchor, constant: 12),
-            abbreviation.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 4),
-            abbreviation.trailingAnchor.constraint(lessThanOrEqualTo: percentPrice.leadingAnchor, constant: -8),
+            abbreviation.bottomAnchor.constraint(equalTo: containerForegroundView.bottomAnchor, constant: -14),
+            abbreviation.topAnchor.constraint(equalTo: containerForegroundView.topAnchor, constant: 38),
             
-            percentPrice.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -17),
-            percentPrice.topAnchor.constraint(equalTo: currentPrice.bottomAnchor, constant: 4),
-            percentPrice.leadingAnchor.constraint(greaterThanOrEqualTo: abbreviation.trailingAnchor, constant: 8),
-            percentPrice.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -14)
+            favoriteImage.leadingAnchor.constraint(equalTo: name.trailingAnchor, constant: 6),
+            favoriteImage.topAnchor.constraint(equalTo: name.topAnchor),
+            favoriteImage.bottomAnchor.constraint(equalTo: name.bottomAnchor),
+            
+            currentPrice.trailingAnchor.constraint(equalTo: containerForegroundView.trailingAnchor, constant: -17),
+            currentPrice.topAnchor.constraint(equalTo: containerForegroundView.topAnchor, constant: 14),
+            currentPrice.bottomAnchor.constraint(equalTo: containerForegroundView.bottomAnchor, constant: -30),
+            
+            percentPrice.trailingAnchor.constraint(equalTo: containerForegroundView.trailingAnchor, constant: -12),
+            percentPrice.topAnchor.constraint(equalTo: containerForegroundView.topAnchor, constant: 38),
+            percentPrice.bottomAnchor.constraint(equalTo: containerForegroundView.bottomAnchor, constant: -12),
         ])
     }
 }

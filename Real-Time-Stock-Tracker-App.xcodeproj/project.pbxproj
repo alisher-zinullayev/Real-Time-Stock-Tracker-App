@@ -39,6 +39,7 @@
 		436027262CB02271002F052A /* StockServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027252CB02271002F052A /* StockServiceProtocol.swift */; };
 		436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027272CB022BB002F052A /* StockImageServiceProtocol.swift */; };
 		4360272A2CB022E2002F052A /* StockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027292CB022E2002F052A /* StockImageService.swift */; };
+		4360272C2CB038CB002F052A /* StockActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360272B2CB038CB002F052A /* StockActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		436027252CB02271002F052A /* StockServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockServiceProtocol.swift; sourceTree = "<group>"; };
 		436027272CB022BB002F052A /* StockImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageServiceProtocol.swift; sourceTree = "<group>"; };
 		436027292CB022E2002F052A /* StockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageService.swift; sourceTree = "<group>"; };
+		4360272B2CB038CB002F052A /* StockActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */,
 				436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */,
 				436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */,
+				4360272B2CB038CB002F052A /* StockActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */,
 				4360272A2CB022E2002F052A /* StockImageService.swift in Sources */,
 				436026F72CAF34F4002F052A /* AppCoordinator.swift in Sources */,
+				4360272C2CB038CB002F052A /* StockActionButton.swift in Sources */,
 				436027262CB02271002F052A /* StockServiceProtocol.swift in Sources */,
 				436027152CB01F7F002F052A /* StockPriceLoaderProtocol.swift in Sources */,
 				431E1DA72CAF2D9200456EDF /* AppDelegate.swift in Sources */,
