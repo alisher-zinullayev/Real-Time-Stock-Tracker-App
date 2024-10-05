@@ -19,7 +19,8 @@ final class StocksViewModel {
     
     var currentState: CurrentState = .all {
         didSet {
-            fetchStocks()
+//            fetchStocks()
+            reloadTableView?()
         }
     }
     
@@ -78,6 +79,19 @@ final class StocksViewModel {
         
         group.notify(queue: .main) {
             self.reloadTableView?()
+        }
+    }
+    
+    func refreshStocks() {
+        stockService.getStockList { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let stockList):
+                self.allStocks = stockList
+                self.fetchStockPrices()
+            case .failure(let error):
+                self.showErrorAlert?("Failed to refresh stocks: \(error.localizedDescription)")
+            }
         }
     }
     

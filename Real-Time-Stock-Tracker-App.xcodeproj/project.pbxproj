@@ -40,6 +40,7 @@
 		436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027272CB022BB002F052A /* StockImageServiceProtocol.swift */; };
 		4360272A2CB022E2002F052A /* StockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436027292CB022E2002F052A /* StockImageService.swift */; };
 		4360272C2CB038CB002F052A /* StockActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360272B2CB038CB002F052A /* StockActionButton.swift */; };
+		4360272F2CB08D87002F052A /* StocksCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4360272D2CB08D87002F052A /* StocksCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		436027272CB022BB002F052A /* StockImageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageServiceProtocol.swift; sourceTree = "<group>"; };
 		436027292CB022E2002F052A /* StockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockImageService.swift; sourceTree = "<group>"; };
 		4360272B2CB038CB002F052A /* StockActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockActionButton.swift; sourceTree = "<group>"; };
+		4360272E2CB08D87002F052A /* StocksCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StocksCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				431E1DAF2CAF2D9400456EDF /* Assets.xcassets */,
 				431E1DB12CAF2D9400456EDF /* LaunchScreen.storyboard */,
 				431E1DB42CAF2D9400456EDF /* Info.plist */,
+				4360272D2CB08D87002F052A /* StocksCoreData.xcdatamodeld */,
 			);
 			path = "Real-Time-Stock-Tracker-App";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				436027132CB01F77002F052A /* StockPriceLoader.swift in Sources */,
 				436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */,
 				436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */,
+				4360272F2CB08D87002F052A /* StocksCoreData.xcdatamodeld in Sources */,
 				4360270F2CB01D53002F052A /* StockLocalDataSource.swift in Sources */,
 				436027172CB01FDA002F052A /* StockPriceData.swift in Sources */,
 				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
@@ -757,6 +761,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4360272D2CB08D87002F052A /* StocksCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4360272E2CB08D87002F052A /* StocksCoreData.xcdatamodel */,
+			);
+			currentVersion = 4360272E2CB08D87002F052A /* StocksCoreData.xcdatamodel */;
+			name = StocksCoreData.xcdatamodeld;
+			path = "/Users/alisherzinullayev/Desktop/Real-Time-Stock-Tracker-App/Real-Time-Stock-Tracker-App/StocksCoreData.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 431E1D9B2CAF2D9200456EDF /* Project object */;
 }

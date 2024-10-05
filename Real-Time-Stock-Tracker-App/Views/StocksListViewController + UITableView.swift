@@ -24,8 +24,14 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch viewModel.currentState {
         case .all:
+            guard indexPath.row < viewModel.allStocks.count else {
+                return UITableViewCell()
+            }
             stock = viewModel.allStocks[indexPath.row]
         case .favorite:
+            guard indexPath.row < viewModel.allStocks.count else {
+                return UITableViewCell()
+            }
             stock = viewModel.favoriteStocks[indexPath.row]
         }
         

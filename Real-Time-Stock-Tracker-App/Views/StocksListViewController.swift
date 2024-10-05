@@ -36,6 +36,12 @@ final class StocksListViewController: UIViewController {
         return button
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -49,12 +55,21 @@ final class StocksListViewController: UIViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.stocksTableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
         
         viewModel.showErrorAlert = { [weak self] errorMessage in
-            self?.showError(with: errorMessage)
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.showError(with: errorMessage)
+                self.refreshControl.endRefreshing()
+            }
         }
+    }
+    
+    @objc private func handleRefresh() {
+        viewModel.refreshStocks()
     }
     
     @objc private func stocksButtonTapped() {
@@ -74,6 +89,7 @@ extension StocksListViewController {
     private func setup() {
         stocksTableView.delegate = self
         stocksTableView.dataSource = self
+        stocksTableView.refreshControl = refreshControl
         
         view.addSubview(stocksButton)
         view.addSubview(favoriteButton)
