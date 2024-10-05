@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(CompanyCoreData)
 public class CompanyCD: NSManagedObject {
 
 }

@@ -14,17 +14,20 @@ final class MainCoordinator: Coordinator {
     
     private let stockService: StockServiceProtocol
     private let stockImageService: StockImageServiceProtocol
+    private let stocksRepository: StocksRepositoryProtocol
 
     init(navigationController: UINavigationController,
          stockService: StockServiceProtocol,
-         stockImageService: StockImageServiceProtocol) {
+         stockImageService: StockImageServiceProtocol,
+         stocksRepository: StocksRepositoryProtocol) {
         self.navigationController = navigationController
         self.stockService = stockService
         self.stockImageService = stockImageService
+        self.stocksRepository = stocksRepository
     }
     
     func start() {
-        let stocksViewModel = StocksViewModel(stockService: stockService, stockImageService: stockImageService)
+        let stocksViewModel = StocksViewModel(stockService: stockService, stockImageService: stockImageService, stocksRepository: stocksRepository)
         stocksViewModel.coordinator = self
         let stocksListViewController = StocksListViewController()
         stocksListViewController.viewModel = stocksViewModel
@@ -39,9 +42,13 @@ final class MainCoordinator: Coordinator {
         let stockService = StockService(stockLocalDataSource: stockLocalDataSource,
                                         stockPricesLoader: stocksPricesLoader)
         let stockImageService = StockImageService(stockImageLoader: stockImageLoader)
+        let stocksRepository = StocksRepository()
         
-        return MainCoordinator(navigationController: navigationController,
-                               stockService: stockService,
-                               stockImageService: stockImageService)
+        return MainCoordinator(
+            navigationController: navigationController,
+            stockService: stockService,
+            stockImageService: stockImageService,
+            stocksRepository: stocksRepository
+        )
     }
 }

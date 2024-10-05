@@ -19,17 +19,20 @@ final class StocksViewModel {
     
     var currentState: CurrentState = .all {
         didSet {
-//            fetchStocks()
             reloadTableView?()
         }
     }
     
     private let stockService: StockServiceProtocol
     let stockImageService: StockImageServiceProtocol
+    private let stocksRepository: StocksRepositoryProtocol
     
-    init(stockService: StockServiceProtocol, stockImageService: StockImageServiceProtocol) {
+    init(stockService: StockServiceProtocol,
+         stockImageService: StockImageServiceProtocol,
+         stocksRepository: StocksRepositoryProtocol) {
         self.stockService = stockService
         self.stockImageService = stockImageService
+        self.stocksRepository = stocksRepository
     }
     
     func fetchStocks() {
@@ -37,12 +40,36 @@ final class StocksViewModel {
             guard let self = self else { return }
             switch result {
             case .success(let stockList):
-                self.allStocks = stockList
-                fetchStockPrices()
+                let companyCDs = self.stocksRepository.fetchAllCompanies()
+                self.allStocks = companyCDs.map { company in
+                    StockData(
+                        name: company.name ?? "Unnamed Company",
+                        ticker: company.ticker ?? "N/A",
+                        logo: company.logoURL ?? "",
+                        isFavorite: company.isFavorite
+                    )
+                }
+                
+                let favoriteCompanyCDs = self.stocksRepository.fetchFavoriteCompanies()
+                self.favoriteStocks = favoriteCompanyCDs.map { companyCD in
+                    StockData(
+                        name: companyCD.name ?? "Unnamed Company",
+                        ticker: companyCD.ticker ?? "N/A",
+                        logo: companyCD.logoURL ?? "",
+                        isFavorite: companyCD.isFavorite
+                    )
+                }
+                
+                self.updateStocks(with: stockList)
+                self.fetchStockPrices()
             case .failure(let error):
                 self.showErrorAlert?("failed to fetch stocks: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func refreshStocks() {
+        fetchStocks()
     }
     
     private func fetchStocks(for state: CurrentState) {
@@ -82,33 +109,71 @@ final class StocksViewModel {
         }
     }
     
-    func refreshStocks() {
-        stockService.getStockList { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let stockList):
-                self.allStocks = stockList
-                self.fetchStockPrices()
-            case .failure(let error):
-                self.showErrorAlert?("Failed to refresh stocks: \(error.localizedDescription)")
-            }
-        }
-    }
-    
     func toggleFavorite(for stock: StockData) {
-        switch isFavorite(stock) {
-        case true:
+        if isFavorite(stock) {
             if let index = favoriteStocks.firstIndex(where: { $0.ticker == stock.ticker }) {
                 favoriteStocks.remove(at: index)
-                reloadTableView?()
             }
-        case false:
+            
+            if let company = stocksRepository.fetchCompany(by: stock.ticker) {
+                stocksRepository.updateCompany(company, isFavorite: false)
+            }
+        } else {
             favoriteStocks.append(stock)
-            reloadTableView?()
+            
+            if let company = stocksRepository.fetchCompany(by: stock.ticker) {
+                stocksRepository.updateCompany(company, isFavorite: true)
+                fetchPrice(for: stock)
+            }
         }
+        
+        stocksRepository.saveContext()
+        reloadTableView?()
     }
+
     
     func isFavorite(_ stock: StockData) -> Bool {
         return favoriteStocks.contains(where: { $0.ticker == stock.ticker })
+    }
+    
+    private func updateStocks(with stockList: [StockData]) {
+        for stock in stockList {
+            if let existingCompany = allStocks.first(where: { $0.ticker == stock.ticker }) {
+                existingCompany.name = stock.name
+                existingCompany.logo = stock.logo
+            } else {
+                _ = stocksRepository.addCompany(
+                    name: stock.name,
+                    ticker: stock.ticker,
+                    logoURL: stock.logo,
+                    isFavorite: false
+                )
+            }
+        }
+        stocksRepository.saveContext()
+    }
+    
+    private func fetchPrice(for stock: StockData) {
+        stockService.getStockPrice(ticker: stock.ticker) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let priceData):
+                guard let company = self.stocksRepository.fetchCompany(by: stock.ticker) else {
+                    self.showErrorAlert?("company not found for ticker: \(stock.ticker)")
+                    return
+                }
+                _ = self.stocksRepository.addPrice(
+                    for: company,
+                    currentPrice: priceData.currentPrice ?? 0,
+                    change: priceData.change ?? 0,
+                    changePercent: priceData.changePercent ?? 0,
+                    timestamp: Date()
+                )
+                self.stockPrices[stock.ticker] = priceData
+                self.reloadTableView?()
+            case .failure(let error):
+                self.showErrorAlert?("Failed to fetch price for \(stock.name): \(error.localizedDescription)")
+            }
+        }
     }
 }

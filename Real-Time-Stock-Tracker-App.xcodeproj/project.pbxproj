@@ -45,6 +45,9 @@
 		436027802CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360277C2CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift */; };
 		436027812CB1CDA4002F052A /* PriceCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360277D2CB1CDA4002F052A /* PriceCD+CoreDataClass.swift */; };
 		436027822CB1CDA4002F052A /* PriceCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360277E2CB1CDA4002F052A /* PriceCD+CoreDataProperties.swift */; };
+		437BC9982CB1D325004AE50F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC9972CB1D325004AE50F /* CoreDataStack.swift */; };
+		437BC99B2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC99A2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift */; };
+		437BC99D2CB1D6E1004AE50F /* StocksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC99C2CB1D6E1004AE50F /* StocksRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,9 @@
 		4360277C2CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4360277D2CB1CDA4002F052A /* PriceCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceCD+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4360277E2CB1CDA4002F052A /* PriceCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PriceCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		437BC9972CB1D325004AE50F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		437BC99A2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepositoryProtocol.swift; sourceTree = "<group>"; };
+		437BC99C2CB1D6E1004AE50F /* StocksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +143,6 @@
 		431E1D9A2CAF2D9200456EDF = {
 			isa = PBXGroup;
 			children = (
-				4360277B2CB1CDA4002F052A /* CompanyCD+CoreDataClass.swift */,
-				4360277C2CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift */,
-				4360277D2CB1CDA4002F052A /* PriceCD+CoreDataClass.swift */,
-				4360277E2CB1CDA4002F052A /* PriceCD+CoreDataProperties.swift */,
 				431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */,
 				431E1DBC2CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppTests */,
 				431E1DC62CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests */,
@@ -161,6 +163,7 @@
 		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
 			isa = PBXGroup;
 			children = (
+				437BC9992CB1D5C4004AE50F /* CoreData */,
 				436027202CB02136002F052A /* Errors */,
 				4360270D2CB01D09002F052A /* Protocols */,
 				4360270C2CB01ABE002F052A /* Services */,
@@ -239,6 +242,10 @@
 		436027092CAF4504002F052A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4360277B2CB1CDA4002F052A /* CompanyCD+CoreDataClass.swift */,
+				4360277C2CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift */,
+				4360277D2CB1CDA4002F052A /* PriceCD+CoreDataClass.swift */,
+				4360277E2CB1CDA4002F052A /* PriceCD+CoreDataProperties.swift */,
 				4360270A2CAF457A002F052A /* StockData.swift */,
 				436027162CB01FDA002F052A /* StockPriceData.swift */,
 			);
@@ -253,6 +260,7 @@
 				4360271E2CB02115002F052A /* StockImageLoader.swift */,
 				436027232CB02269002F052A /* StockService.swift */,
 				436027292CB022E2002F052A /* StockImageService.swift */,
+				437BC99C2CB1D6E1004AE50F /* StocksRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				4360271C2CB020FD002F052A /* StockImageLoaderProtocol.swift */,
 				436027252CB02271002F052A /* StockServiceProtocol.swift */,
 				436027272CB022BB002F052A /* StockImageServiceProtocol.swift */,
+				437BC99A2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -276,6 +285,14 @@
 				436027212CB02141002F052A /* ImageLoadError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		437BC9992CB1D5C4004AE50F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				437BC9972CB1D325004AE50F /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,11 +432,14 @@
 				436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */,
 				436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */,
 				4360272F2CB08D87002F052A /* StocksCoreData.xcdatamodeld in Sources */,
+				437BC9982CB1D325004AE50F /* CoreDataStack.swift in Sources */,
+				437BC99D2CB1D6E1004AE50F /* StocksRepository.swift in Sources */,
 				4360270F2CB01D53002F052A /* StockLocalDataSource.swift in Sources */,
 				436027172CB01FDA002F052A /* StockPriceData.swift in Sources */,
 				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
 				436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */,
 				436027112CB01EBA002F052A /* StockLocalDataSourceProtocol.swift in Sources */,
+				437BC99B2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift in Sources */,
 				4360271B2CB0208C002F052A /* NetworkingError.swift in Sources */,
 				436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */,
 				4360272A2CB022E2002F052A /* StockImageService.swift in Sources */,

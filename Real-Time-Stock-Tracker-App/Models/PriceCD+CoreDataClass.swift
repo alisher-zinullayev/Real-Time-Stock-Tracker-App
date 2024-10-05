@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc(PriceCoreData)
 public class PriceCD: NSManagedObject {
 
 }
