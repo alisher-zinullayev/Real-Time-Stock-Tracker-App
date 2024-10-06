@@ -48,6 +48,9 @@
 		437BC9982CB1D325004AE50F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC9972CB1D325004AE50F /* CoreDataStack.swift */; };
 		437BC99B2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC99A2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift */; };
 		437BC99D2CB1D6E1004AE50F /* StocksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC99C2CB1D6E1004AE50F /* StocksRepository.swift */; };
+		437BC99F2CB28D12004AE50F /* StocksSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC99E2CB28D12004AE50F /* StocksSearchBar.swift */; };
+		437BC9A22CB28E66004AE50F /* SearchBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC9A12CB28E66004AE50F /* SearchBarState.swift */; };
+		437BC9A42CB28E7B004AE50F /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437BC9A32CB28E7B004AE50F /* CurrentState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		437BC9972CB1D325004AE50F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		437BC99A2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepositoryProtocol.swift; sourceTree = "<group>"; };
 		437BC99C2CB1D6E1004AE50F /* StocksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRepository.swift; sourceTree = "<group>"; };
+		437BC99E2CB28D12004AE50F /* StocksSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksSearchBar.swift; sourceTree = "<group>"; };
+		437BC9A12CB28E66004AE50F /* SearchBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarState.swift; sourceTree = "<group>"; };
+		437BC9A32CB28E7B004AE50F /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
 			isa = PBXGroup;
 			children = (
+				437BC9A02CB28E59004AE50F /* States */,
 				437BC9992CB1D5C4004AE50F /* CoreData */,
 				436027202CB02136002F052A /* Errors */,
 				4360270D2CB01D09002F052A /* Protocols */,
@@ -216,6 +223,7 @@
 				436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */,
 				436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */,
 				4360272B2CB038CB002F052A /* StockActionButton.swift */,
+				437BC99E2CB28D12004AE50F /* StocksSearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +301,15 @@
 				437BC9972CB1D325004AE50F /* CoreDataStack.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		437BC9A02CB28E59004AE50F /* States */ = {
+			isa = PBXGroup;
+			children = (
+				437BC9A12CB28E66004AE50F /* SearchBarState.swift */,
+				437BC9A32CB28E7B004AE50F /* CurrentState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +456,7 @@
 				431E1DAB2CAF2D9200456EDF /* StocksListViewController.swift in Sources */,
 				436027282CB022BB002F052A /* StockImageServiceProtocol.swift in Sources */,
 				436027112CB01EBA002F052A /* StockLocalDataSourceProtocol.swift in Sources */,
+				437BC9A42CB28E7B004AE50F /* CurrentState.swift in Sources */,
 				437BC99B2CB1D5EB004AE50F /* StocksRepositoryProtocol.swift in Sources */,
 				4360271B2CB0208C002F052A /* NetworkingError.swift in Sources */,
 				436027062CAF4211002F052A /* UIColor + Extension.swift in Sources */,
@@ -451,6 +469,7 @@
 				436026FD2CAF36F7002F052A /* StocksViewModel.swift in Sources */,
 				436027242CB02269002F052A /* StockService.swift in Sources */,
 				4360270B2CAF457A002F052A /* StockData.swift in Sources */,
+				437BC9A22CB28E66004AE50F /* SearchBarState.swift in Sources */,
 				4360277F2CB1CDA4002F052A /* CompanyCD+CoreDataClass.swift in Sources */,
 				436027802CB1CDA4002F052A /* CompanyCD+CoreDataProperties.swift in Sources */,
 				436027812CB1CDA4002F052A /* PriceCD+CoreDataClass.swift in Sources */,
@@ -460,6 +479,7 @@
 				436027042CAF41A6002F052A /* Helper.swift in Sources */,
 				4360271D2CB020FD002F052A /* StockImageLoaderProtocol.swift in Sources */,
 				436026FF2CAF3ACC002F052A /* StocksTableViewCell.swift in Sources */,
+				437BC99F2CB28D12004AE50F /* StocksSearchBar.swift in Sources */,
 				431E1DA92CAF2D9200456EDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum CurrentState {
-    case all
-    case favorite
-}
-
 final class StocksListViewController: UIViewController {
     var viewModel: StocksViewModel!
     
@@ -22,6 +17,12 @@ final class StocksListViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.register(StocksTableViewCell.self, forCellReuseIdentifier: StocksTableViewCell.identifier)
         return tableView
+    }()
+    
+    private let stocksSearchBar: StocksSearchBar = {
+        let searchBar = StocksSearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        return searchBar
     }()
     
     private lazy var stocksButton: StockActionButton = {
@@ -41,6 +42,10 @@ final class StocksListViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         return refreshControl
     }()
+    
+    private var currentSearchQuery: String? {
+        return viewModel.currentSearchQuery
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,35 +80,50 @@ final class StocksListViewController: UIViewController {
     @objc private func stocksButtonTapped() {
         stocksButton.selectButton()
         favoriteButton.deselectButton()
-        viewModel.currentState = .all
+        if case .searchFavorite(_) = viewModel.currentState, let query = currentSearchQuery {
+            viewModel.currentState = .searchAll(query)
+        } else {
+            viewModel.currentState = .all
+        }
     }
     
     @objc private func favoriteButtonTapped() {
         stocksButton.deselectButton()
         favoriteButton.selectButton()
-        viewModel.currentState = .favorite
+        if case .searchAll(_) = viewModel.currentState, let query = currentSearchQuery {
+            viewModel.currentState = .searchFavorite(query)
+        } else {
+            viewModel.currentState = .favorite
+        }
     }
 }
 
 extension StocksListViewController {
     private func setup() {
+        stocksSearchBar.delegate = self
         stocksTableView.delegate = self
         stocksTableView.dataSource = self
         stocksTableView.refreshControl = refreshControl
         
+        view.addSubview(stocksSearchBar)
         view.addSubview(stocksButton)
         view.addSubview(favoriteButton)
         view.addSubview(stocksTableView)
         
         NSLayoutConstraint.activate([
+            stocksSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stocksSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stocksSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stocksSearchBar.heightAnchor.constraint(equalToConstant: 48),
+            
             stocksButton.heightAnchor.constraint(equalToConstant: 32),
             stocksButton.widthAnchor.constraint(equalToConstant: 98),
             stocksButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stocksButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            stocksButton.topAnchor.constraint(equalTo: stocksSearchBar.bottomAnchor, constant: 20),
             
             favoriteButton.heightAnchor.constraint(equalToConstant: 32),
             favoriteButton.leadingAnchor.constraint(equalTo: stocksButton.trailingAnchor, constant: 20),
-            favoriteButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            favoriteButton.topAnchor.constraint(equalTo: stocksSearchBar.bottomAnchor, constant: 20),
             
             stocksTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stocksTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -116,5 +136,19 @@ extension StocksListViewController {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension StocksListViewController: StocksSearchBarDelegate {
+    func customSearchBar(_ searchBar: StocksSearchBar, didChangeSearchText searchText: String) {
+        viewModel.filterStocks(with: searchText)
+    }
+    
+    func customSearchBarDidSwitchToSearchResults(_ searchBar: StocksSearchBar) {
+        
+    }
+    
+    func customSearchBarDidReturnToNormal(_ searchBar: StocksSearchBar) {
+        viewModel.resetSearch()
     }
 }

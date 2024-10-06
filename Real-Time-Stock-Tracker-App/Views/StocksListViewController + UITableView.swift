@@ -14,6 +14,8 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
             viewModel.allStocks.count
         case .favorite:
             viewModel.favoriteStocks.count
+        case .searchAll, .searchFavorite:
+            viewModel.filteredStocks.count
         }
     }
     
@@ -29,10 +31,15 @@ extension StocksListViewController: UITableViewDelegate, UITableViewDataSource {
             }
             stock = viewModel.allStocks[indexPath.row]
         case .favorite:
-            guard indexPath.row < viewModel.allStocks.count else {
+            guard indexPath.row < viewModel.favoriteStocks.count else {
                 return UITableViewCell()
             }
             stock = viewModel.favoriteStocks[indexPath.row]
+        case .searchAll(let query), .searchFavorite(let query):
+            guard indexPath.row < viewModel.filteredStocks.count else {
+                return UITableViewCell()
+            }
+            stock = viewModel.filteredStocks[indexPath.row]
         }
         
         let stockPrice = viewModel.stockPrices[stock.ticker]

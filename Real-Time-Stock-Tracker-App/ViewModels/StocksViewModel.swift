@@ -12,6 +12,7 @@ final class StocksViewModel {
     
     private(set) var allStocks = [StockData]()
     private(set) var favoriteStocks = [StockData]()
+    private(set) var filteredStocks = [StockData]()
     private(set) var stockPrices = [String: StockPriceData]()
     
     var showErrorAlert: ((String) -> Void)?
@@ -22,6 +23,8 @@ final class StocksViewModel {
             reloadTableView?()
         }
     }
+    
+    var currentSearchQuery: String?
     
     private let stockService: StockServiceProtocol
     let stockImageService: StockImageServiceProtocol
@@ -70,15 +73,6 @@ final class StocksViewModel {
     
     func refreshStocks() {
         fetchStocks()
-    }
-    
-    private func fetchStocks(for state: CurrentState) {
-        switch state {
-        case .all:
-            reloadTableView?()
-        case .favorite:
-            reloadTableView?()
-        }
     }
     
     func fetchStockPrices() {
@@ -175,5 +169,62 @@ final class StocksViewModel {
                 self.showErrorAlert?("Failed to fetch price for \(stock.name): \(error.localizedDescription)")
             }
         }
+    }
+    
+//    func filterStocks(with query: String) {
+//        if query.isEmpty {
+//            currentState = .all
+//            filteredStocks.removeAll()
+//        } else {
+//            filteredStocks = allStocks.filter { stock in
+//                stock.name.lowercased().contains(query.lowercased()) ||
+//                stock.ticker.lowercased().contains(query.lowercased())
+//            }
+//            currentState = .searchAll(query)
+//        }
+//        reloadTableView?()
+//    }
+    func filterStocks(with query: String) {
+        currentSearchQuery = query
+        if query.isEmpty {
+            switch currentState {
+            case .searchAll:
+                currentState = .all
+            case .searchFavorite:
+                currentState = .favorite
+            default:
+                break
+            }
+            filteredStocks.removeAll()
+        } else {
+            switch currentState {
+            case .all, .searchAll:
+                filteredStocks = allStocks.filter { stock in
+                    stock.name.lowercased().contains(query.lowercased()) ||
+                    stock.ticker.lowercased().contains(query.lowercased())
+                }
+                currentState = .searchAll(query)
+            case .favorite, .searchFavorite:
+                filteredStocks = favoriteStocks.filter { stock in
+                    stock.name.lowercased().contains(query.lowercased()) ||
+                    stock.ticker.lowercased().contains(query.lowercased())
+                }
+                currentState = .searchFavorite(query)
+            }
+        }
+        reloadTableView?()
+    }
+    
+    func resetSearch() {
+        filteredStocks.removeAll()
+        switch currentState {
+        case .searchAll:
+            currentState = .all
+        case .searchFavorite:
+            currentState = .favorite
+        default:
+            break
+        }
+        reloadTableView?()
     }
 }
