@@ -24,7 +24,6 @@ extension CompanyCD {
 
 }
 
-// MARK: Generated accessors for prices
 extension CompanyCD {
 
     @objc(addPricesObject:)
