@@ -12,6 +12,17 @@ final class StocksTableViewCell: UITableViewCell {
     
     var favoriteButtonTapped: (() -> Void)?
     
+    struct Model {
+        let name: String
+        let abbreviation: String
+        let logoURL: String
+        let currentPrice: String
+        let percentPrice: String
+        let percentPriceColor: UIColor
+        let favoriteImageName: String
+        let containerBackgroundColor: UIColor
+    }
+    
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.lightGray
@@ -119,57 +130,28 @@ final class StocksTableViewCell: UITableViewCell {
     }
     
     func configure(
-        with stock: StockData,
-        price: StockPriceData?,
-        imageService: StockImageServiceProtocol,
-        index: Int
+        with model: Model,
+        imageService: StockImageServiceProtocol
     ) {
-        name.text = stock.name
-        abbreviation.text = stock.ticker
+        name.text = model.name
+        abbreviation.text = model.abbreviation
+        currentPrice.text = model.currentPrice
+        percentPrice.text = model.percentPrice
+        percentPrice.textColor = model.percentPriceColor
+        favoriteImage.image = UIImage(named: model.favoriteImageName)
+        containerView.backgroundColor = model.containerBackgroundColor
         
-        imageService.fetchImage(urlString: stock.logo) { [weak self] result in
+        imageService.fetchImage(urlString: model.logoURL) { [weak self] result in
             switch result {
             case .success(let image):
                 DispatchQueue.main.async {
                     self?.logo.image = image
                 }
             case .failure(let error):
-                print("failed to load image for \(stock.ticker): \(error.localizedDescription)")
+                dump(error)
+                print("failed to load image for \(model.abbreviation): \(error.localizedDescription)")
             }
         }
-        
-        if let price = price {
-            if let newPrice = price.currentPrice {
-                currentPrice.text = String(format: "$%.2f", newPrice)
-            } else {
-                currentPrice.text = "--"
-            }
-            if let change = price.change, let changePercent = price.changePercent {
-                percentPrice.text = String(format: "%+.2f (%.2f%%)", change, changePercent)
-                percentPrice.textColor = change >= 0 ? .systemGreen : .systemRed
-            } else {
-                percentPrice.text = "--"
-            }
-        } else {
-            currentPrice.text = "--"
-            percentPrice.text = "--"
-        }
-        
-        switch stock.isFavorite {
-        case true:
-            favoriteImage.image = UIImage(named: "Favorite")
-        case false:
-            favoriteImage.image = UIImage(named: "NotFavorite")
-        }
-        
-        switch isEven(index) {
-        case true:
-            containerView.layer.backgroundColor = UIColor.myGrayColor.cgColor
-        case false:
-            containerView.layer.backgroundColor = UIColor.myWhiteColor.cgColor
-        }
-        
-        setFavorite(isFavorite: stock.isFavorite)
     }
     
     func setFavorite(isFavorite: Bool) {

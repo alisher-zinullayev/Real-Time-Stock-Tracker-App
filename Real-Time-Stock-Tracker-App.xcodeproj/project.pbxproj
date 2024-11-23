@@ -15,6 +15,7 @@
 		431E1DBE2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DBD2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppTests.swift */; };
 		431E1DC82CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DC72CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift */; };
 		431E1DCA2CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E1DC92CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift */; };
+		435505C82CF23972007CBE0F /* StocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435505C72CF23972007CBE0F /* StocksModel.swift */; };
 		436026F52CAF34CE002F052A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026F42CAF34CE002F052A /* Coordinator.swift */; };
 		436026F72CAF34F4002F052A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026F62CAF34F4002F052A /* AppCoordinator.swift */; };
 		436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436026F82CAF3595002F052A /* MainCoordinator.swift */; };
@@ -85,6 +86,7 @@
 		431E1DC32CAF2D9500456EDF /* Real-Time-Stock-Tracker-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Real-Time-Stock-Tracker-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		431E1DC72CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Time_Stock_Tracker_AppUITests.swift; sourceTree = "<group>"; };
 		431E1DC92CAF2D9500456EDF /* Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Real_Time_Stock_Tracker_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		435505C72CF23972007CBE0F /* StocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StocksModel.swift; path = "Real-Time-Stock-Tracker-App/States/StocksModel.swift"; sourceTree = SOURCE_ROOT; };
 		436026F42CAF34CE002F052A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		436026F62CAF34F4002F052A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		436026F82CAF3595002F052A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				436026FA2CAF3634002F052A /* Views */,
 				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
+				435505C72CF23972007CBE0F /* StocksModel.swift */,
 			);
 			path = StocksMainPageModule;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				436026F52CAF34CE002F052A /* Coordinator.swift in Sources */,
 				4360271F2CB02115002F052A /* StockImageLoader.swift in Sources */,
 				436027132CB01F77002F052A /* StockPriceLoader.swift in Sources */,
+				435505C82CF23972007CBE0F /* StocksModel.swift in Sources */,
 				436026F92CAF3595002F052A /* MainCoordinator.swift in Sources */,
 				436027012CAF4093002F052A /* StocksListViewController + UITableView.swift in Sources */,
 				4360272F2CB08D87002F052A /* StocksCoreData.xcdatamodeld in Sources */,
