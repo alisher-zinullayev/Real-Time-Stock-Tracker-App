@@ -173,6 +173,7 @@
 		431E1DA52CAF2D9200456EDF /* Real-Time-Stock-Tracker-App */ = {
 			isa = PBXGroup;
 			children = (
+				435505C62CF2371B007CBE0F /* StocksMainPageModule */,
 				43A870E52CF0E9230018800A /* NetworkingLayer */,
 				437BC9A02CB28E59004AE50F /* States */,
 				437BC9992CB1D5C4004AE50F /* CoreData */,
@@ -180,8 +181,6 @@
 				4360270D2CB01D09002F052A /* Protocols */,
 				4360270C2CB01ABE002F052A /* Services */,
 				436027092CAF4504002F052A /* Models */,
-				436026FA2CAF3634002F052A /* Views */,
-				436026FB2CAF36EB002F052A /* ViewModels */,
 				436027022CAF4198002F052A /* Helpers */,
 				436026F32CAF347F002F052A /* Coordinators */,
 				431E1DA62CAF2D9200456EDF /* AppDelegate.swift */,
@@ -211,6 +210,15 @@
 			path = "Real-Time-Stock-Tracker-AppUITests";
 			sourceTree = "<group>";
 		};
+		435505C62CF2371B007CBE0F /* StocksMainPageModule */ = {
+			isa = PBXGroup;
+			children = (
+				436026FA2CAF3634002F052A /* Views */,
+				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
+			);
+			path = StocksMainPageModule;
+			sourceTree = "<group>";
+		};
 		436026F32CAF347F002F052A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,14 +239,6 @@
 				437BC99E2CB28D12004AE50F /* StocksSearchBar.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		436026FB2CAF36EB002F052A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		436027022CAF4198002F052A /* Helpers */ = {
