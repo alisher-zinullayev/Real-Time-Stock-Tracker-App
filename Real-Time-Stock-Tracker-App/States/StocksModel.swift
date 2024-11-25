@@ -209,7 +209,7 @@ final class StocksModel {
         let percentPrice: String
         let percentPriceColor: UIColor
         let imageName = stock.isFavorite ? "Favorite" : "NotFavorite"
-        let containerBackgroundColor = isEven(indexPath.row) ? UIColor.myGrayColor : UIColor.myWhiteColor
+        let containerBackgroundColor = indexPath.row.isMultiple(of: 2) ? UIColor.myGrayColor : UIColor.myWhiteColor
         
         if let price = priceModel {
             if let newPrice = price.currentPrice {
@@ -240,9 +240,5 @@ final class StocksModel {
             favoriteImageName: imageName,
             containerBackgroundColor: containerBackgroundColor
         )
-    }
-    
-    private func isEven(_ index: Int) -> Bool {
-        return index % 2 == 0
     }
 }
