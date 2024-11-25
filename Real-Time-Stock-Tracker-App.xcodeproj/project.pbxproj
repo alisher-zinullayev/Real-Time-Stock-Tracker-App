@@ -176,13 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				435505C62CF2371B007CBE0F /* StocksMainPageModule */,
+				4360270C2CB01ABE002F052A /* Services */,
 				43A870E52CF0E9230018800A /* NetworkingLayer */,
 				437BC9A02CB28E59004AE50F /* States */,
 				437BC9992CB1D5C4004AE50F /* CoreData */,
 				436027202CB02136002F052A /* Errors */,
-				4360270D2CB01D09002F052A /* Protocols */,
-				4360270C2CB01ABE002F052A /* Services */,
-				436027092CAF4504002F052A /* Models */,
 				436027022CAF4198002F052A /* Helpers */,
 				436026F32CAF347F002F052A /* Coordinators */,
 				431E1DA62CAF2D9200456EDF /* AppDelegate.swift */,
@@ -215,6 +213,7 @@
 		435505C62CF2371B007CBE0F /* StocksMainPageModule */ = {
 			isa = PBXGroup;
 			children = (
+				436027092CAF4504002F052A /* Models */,
 				436026FA2CAF3634002F052A /* Views */,
 				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
 				435505C72CF23972007CBE0F /* StocksModel.swift */,
@@ -268,6 +267,7 @@
 		4360270C2CB01ABE002F052A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4360270D2CB01D09002F052A /* Protocols */,
 				4360270E2CB01D53002F052A /* StockLocalDataSource.swift */,
 				436027122CB01F77002F052A /* StockPriceLoader.swift */,
 				4360271E2CB02115002F052A /* StockImageLoader.swift */,
