@@ -55,16 +55,25 @@ final class StocksModel {
     
     private func updateStocks(with stockList: [StockData]) {
         for stock in stockList {
-            if let existingCompany = allStocks.first(where: { $0.ticker == stock.ticker }) {
-                existingCompany.name = stock.name
-                existingCompany.logo = stock.logo
+            if let index = allStocks.firstIndex(where: { $0.ticker == stock.ticker }) {
+                allStocks[index].name = stock.name
+                allStocks[index].logo = stock.logo
             } else {
-                _ = stocksRepository.addCompany(
+                let newCompany = stocksRepository.addCompany(
                     name: stock.name,
                     ticker: stock.ticker,
                     logoURL: stock.logo,
                     isFavorite: false
                 )
+                
+                let newStock = StockData(
+                    name: newCompany.name ?? "Unnamed Company",
+                    ticker: newCompany.ticker ?? "N/A",
+                    logo: newCompany.logoURL ?? "",
+                    isFavorite: newCompany.isFavorite
+                )
+                
+                allStocks.append(newStock)
             }
         }
         stocksRepository.saveContext()

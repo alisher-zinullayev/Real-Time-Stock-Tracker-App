@@ -216,6 +216,7 @@
 				436027092CAF4504002F052A /* Models */,
 				436026FA2CAF3634002F052A /* Views */,
 				436026FC2CAF36F7002F052A /* StocksViewModel.swift */,
+				431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */,
 				435505C72CF23972007CBE0F /* StocksModel.swift */,
 			);
 			path = StocksMainPageModule;
@@ -234,7 +235,6 @@
 		436026FA2CAF3634002F052A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				431E1DAA2CAF2D9200456EDF /* StocksListViewController.swift */,
 				436026FE2CAF3ACC002F052A /* StocksTableViewCell.swift */,
 				436027002CAF4093002F052A /* StocksListViewController + UITableView.swift */,
 				4360272B2CB038CB002F052A /* StockActionButton.swift */,
