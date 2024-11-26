@@ -117,6 +117,7 @@ final class StocksTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        logo.image = nil
     }
     
     private func setupFavoriteTapGesture() {
